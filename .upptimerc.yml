@@ -42,8 +42,11 @@ status-website:
   theme: dark
   # The landing page's palette, so the two read as one product. See the file
   # for why the up/degraded/down colours are not the brand's.
-  themeUrl: /assets/cordice.css
+  # The build flattens assets/ into the site root, so this is where the file
+  # actually lands — not the path it is written at.
+  themeUrl: /cordice.css
   logoUrl: https://cordice-site.pages.dev/favicon.svg
+  faviconSvg: https://cordice-site.pages.dev/favicon.svg
   introTitle: "Whether Cordice is working, checked from outside our own infrastructure."
   introMessage: >-
     Every service is probed every five minutes from GitHub's machines, and this
