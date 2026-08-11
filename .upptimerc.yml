@@ -42,9 +42,46 @@ status-website:
   theme: dark
   # The landing page's palette, so the two read as one product. See the file
   # for why the up/degraded/down colours are not the brand's.
-  # The build flattens assets/ into the site root, so this is where the file
-  # actually lands — not the path it is written at.
-  themeUrl: /cordice.css
+  # Inline rather than a file. A themeUrl pointing at our own host makes the
+  # site generator crawl that path as if it were a page, which creates a
+  # directory where the stylesheet was going to be written and fails the build.
+  # The source of these values, with the reasoning, is assets/cordice.css.
+  css: |
+    :root {
+      --body-background-color: #110e17;
+      --body-text-color: #ede9f5;
+      --card-background-color: #221c2e;
+      --nav-background-color: #191523;
+      --nav-border-bottom-color: #322a46;
+      --nav-current-border-bottom-color: #00d8ff;
+      --card-border-color: #322a46;
+      --up-border-left-color: #22c55e;
+      --degraded-border-left-color: #f5a623;
+      --down-border-left-color: #ef4444;
+      --down-background-color: #3b1620;
+      --tag-color: #110e17;
+      --tag-up-background-color: #22c55e;
+      --tag-degraded-background-color: #f5a623;
+      --tag-down-background-color: #ef4444;
+      --change-background-color: #f5a623;
+      --error-button-border-color: #00d8ff;
+      --error-button-background-color: #00d8ff;
+      --error-button-color: #110e17;
+      --submit-button-border-color: #00d8ff;
+      --submit-button-background-color: #00d8ff;
+      --submit-button-color: #110e17;
+      --graph-opacity: 0.9;
+    }
+    .card {
+      border-radius: 12px;
+    }
+    a {
+      color: #00d8ff;
+    }
+    .intro {
+      max-width: 62ch;
+      line-height: 1.6;
+    }
   logoUrl: https://cordice-site.pages.dev/favicon.svg
   faviconSvg: https://cordice-site.pages.dev/favicon.svg
   introTitle: "Whether Cordice is working, checked from outside our own infrastructure."
