@@ -19,18 +19,15 @@ sites:
     expectedStatusCodes:
       - 200
 
-  - name: Events (WebSocket)
-    url: https://app.rhmt.online/ws
-    # A WebSocket handshake over HTTP/1.1. Without these headers the server
-    # answers 400, which is correct and would look like an outage.
-    method: GET
-    headers:
-      - "Connection: Upgrade"
-      - "Upgrade: websocket"
-      - "Sec-WebSocket-Version: 13"
-      - "Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ=="
-    expectedStatusCodes:
-      - 101
+  # The events server is missing here, and not by oversight. It is a raw TCP
+  # listener that speaks only the WebSocket handshake, so anything else gets a
+  # 502 from the reverse proxy — the same 502 it would return if the service
+  # were actually down. A check that cannot tell those apart is worse than no
+  # check, because it teaches everyone to ignore it.
+  #
+  # The fix belongs in the service: it needs an endpoint that answers plain
+  # HTTP. Until it has one, this page does not claim to know whether real-time
+  # events are working.
 
   - name: File service
     url: https://app.rhmt.online/autumn/
