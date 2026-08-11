@@ -1,0 +1,65 @@
+owner: wearecordice
+repo: status
+
+# Every address a user or a client actually depends on, checked from outside.
+#
+# The point of this repository is that none of it runs on our infrastructure:
+# the checks run on GitHub's machines and the page is served by GitHub Pages, so
+# a total outage of our server still leaves a working page saying so. A status
+# page hosted next to the thing it watches goes quiet exactly when it matters.
+sites:
+  - name: Web client
+    url: https://app.rhmt.online/
+    icon: https://app.rhmt.online/favicon.ico
+
+  - name: API
+    url: https://app.rhmt.online/api/
+    # The discovery document. It touches configuration, the database and the
+    # file service's address, so a 200 here means rather more than a static page.
+    expectedStatusCodes:
+      - 200
+
+  - name: Events (WebSocket)
+    url: https://app.rhmt.online/ws
+    # A WebSocket handshake over HTTP/1.1. Without these headers the server
+    # answers 400, which is correct and would look like an outage.
+    method: GET
+    headers:
+      - "Connection: Upgrade"
+      - "Upgrade: websocket"
+      - "Sec-WebSocket-Version: 13"
+      - "Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ=="
+    expectedStatusCodes:
+      - 101
+
+  - name: File service
+    url: https://app.rhmt.online/autumn/
+
+  - name: Website
+    url: https://cordice-site.pages.dev/
+
+  - name: Developer documentation
+    url: https://developers.rhmt.online/
+
+status-website:
+  cname: status.rhmt.online
+  name: Cordice Status
+  introTitle: "Whether Cordice is working, checked from outside our own infrastructure."
+  introMessage: >-
+    Every service is probed every five minutes from GitHub's machines, and this
+    page is served by GitHub — so if our servers go down, this page stays up and
+    says so. History and incidents are public.
+  navbar:
+    - title: Status
+      href: /
+    - title: Cordice
+      href: https://cordice-site.pages.dev
+    - title: Developers
+      href: https://developers.rhmt.online
+    - title: Source
+      href: https://github.com/wearecordice/status
+
+# An outage opens an issue and a recovery closes it, so the incident history is
+# the issue history and nobody has to remember to write one.
+assignees:
+  - schadomia
