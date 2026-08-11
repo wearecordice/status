@@ -1,0 +1,63 @@
+/*
+ * The status page, in Cordice's colours.
+ *
+ * The palette is the landing page's, so the two read as one product rather than
+ * as a service and a tool someone bolted on. Values are copied from
+ * apps/site/src/components/layout/StyleConstants.astro; if those change, these
+ * are what follow.
+ *
+ * Status colours are deliberately not the brand's. Our accent is cyan, which
+ * sits close enough to green that a glance could read "degraded" as "fine" —
+ * and on a page whose only job is to be read at a glance, that is the one thing
+ * it must not do. Up, degraded and down keep the ordinary green, amber and red
+ * everybody already knows.
+ */
+
+:root {
+  --body-background-color: #110e17;
+  --body-text-color: #ede9f5;
+  --card-background-color: #221c2e;
+  --nav-background-color: #191523;
+  --nav-border-bottom-color: #322a46;
+  --nav-current-border-bottom-color: #00d8ff;
+  --card-border-color: #322a46;
+
+  --up-border-left-color: #22c55e;
+  --degraded-border-left-color: #f5a623;
+  --down-border-left-color: #ef4444;
+  --down-background-color: #3b1620;
+
+  --tag-color: #110e17;
+  --tag-up-background-color: #22c55e;
+  --tag-degraded-background-color: #f5a623;
+  --tag-down-background-color: #ef4444;
+
+  --change-background-color: #f5a623;
+
+  --error-button-border-color: #00d8ff;
+  --error-button-background-color: #00d8ff;
+  --error-button-color: #110e17;
+  --submit-button-border-color: #00d8ff;
+  --submit-button-background-color: #00d8ff;
+  --submit-button-color: #110e17;
+
+  --graph-opacity: 0.9;
+}
+
+/* Slightly softer than the default, which stamps every card with a hard edge. */
+.card {
+  border-radius: 12px;
+}
+
+a {
+  color: #00d8ff;
+}
+
+/*
+ * The intro is the first thing read and the only place the page explains
+ * itself, so it is given the room to be read rather than skimmed past.
+ */
+.intro {
+  max-width: 62ch;
+  line-height: 1.6;
+}
