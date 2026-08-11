@@ -36,11 +36,11 @@
     "dailyMinutesDown": {}
   },
   {
-    "name": "Events (WebSocket)",
-    "url": "https://app.rhmt.online/ws",
+    "name": "Events",
+    "url": "https://app.rhmt.online/ws/health",
     "icon": "https://icons.duckduckgo.com/ip3/app.rhmt.online.ico",
-    "slug": "events-web-socket",
-    "status": "down",
+    "slug": "events",
+    "status": "up",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
