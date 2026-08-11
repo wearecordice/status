@@ -19,15 +19,13 @@ sites:
     expectedStatusCodes:
       - 200
 
-  # The events server is missing here, and not by oversight. It is a raw TCP
-  # listener that speaks only the WebSocket handshake, so anything else gets a
-  # 502 from the reverse proxy — the same 502 it would return if the service
-  # were actually down. A check that cannot tell those apart is worse than no
-  # check, because it teaches everyone to ignore it.
-  #
-  # The fix belongs in the service: it needs an endpoint that answers plain
-  # HTTP. Until it has one, this page does not claim to know whether real-time
-  # events are working.
+  - name: Events
+    # Not the socket itself: a WebSocket handshake cannot be made over HTTP/2,
+    # which is what this monitor speaks, and the proxy would answer 502 — the
+    # same 502 a dead service returns. So the service answers this path itself,
+    # with a body no other part of the stack would produce.
+    url: https://app.rhmt.online/ws/health
+    __dangerous__body_down_if_text_missing: ok
 
   - name: File service
     url: https://app.rhmt.online/autumn/
