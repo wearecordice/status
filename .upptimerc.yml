@@ -9,11 +9,11 @@ repo: status
 # page hosted next to the thing it watches goes quiet exactly when it matters.
 sites:
   - name: Web client
-    url: https://app.rhmt.online/
-    icon: https://app.rhmt.online/favicon.ico
+    url: https://app.cordice.org/
+    icon: https://app.cordice.org/favicon.ico
 
   - name: API
-    url: https://app.rhmt.online/api/
+    url: https://app.cordice.org/api/
     # The discovery document. It touches configuration, the database and the
     # file service's address, so a 200 here means rather more than a static page.
     expectedStatusCodes:
@@ -24,20 +24,20 @@ sites:
     # which is what this monitor speaks, and the proxy would answer 502 — the
     # same 502 a dead service returns. So the service answers this path itself,
     # with a body no other part of the stack would produce.
-    url: https://app.rhmt.online/ws/health
+    url: https://app.cordice.org/ws/health
     __dangerous__body_down_if_text_missing: ok
 
   - name: File service
-    url: https://app.rhmt.online/autumn/
+    url: https://app.cordice.org/autumn/
 
   - name: Website
-    url: https://cordice-site.pages.dev/
+    url: https://cordice.org/
 
   - name: Developer documentation
-    url: https://developers.rhmt.online/
+    url: https://developers.cordice.org/
 
 status-website:
-  cname: status.rhmt.online
+  cname: status.cordice.org
   name: Cordice Status
   theme: dark
   # The landing page's palette, so the two read as one product. See the file
@@ -82,8 +82,8 @@ status-website:
       max-width: 62ch;
       line-height: 1.6;
     }
-  logoUrl: https://cordice-site.pages.dev/favicon.svg
-  faviconSvg: https://cordice-site.pages.dev/favicon.svg
+  logoUrl: https://cordice.org/favicon.svg
+  faviconSvg: https://cordice.org/favicon.svg
   introTitle: "Whether Cordice is working, checked from outside our own infrastructure."
   introMessage: >-
     Every service is probed every five minutes from GitHub's machines, and this
@@ -93,9 +93,9 @@ status-website:
     - title: Status
       href: /
     - title: Cordice
-      href: https://cordice-site.pages.dev
+      href: https://cordice.org
     - title: Developers
-      href: https://developers.rhmt.online
+      href: https://developers.cordice.org
     - title: Source
       href: https://github.com/wearecordice/status
 
