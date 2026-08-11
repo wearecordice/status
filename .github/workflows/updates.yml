@@ -15,6 +15,10 @@
 
 
 name: Updates CI
+
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: "0 3 * * *"
