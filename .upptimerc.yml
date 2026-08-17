@@ -161,34 +161,51 @@ status-website:
     }
 
     /* Navigation. The site's rule about shape: anything you press is fully
-       rounded, anything you read off is a rounded rectangle. */
+       rounded, anything you read off is a rounded rectangle.
+     *
+     * Every selector below carries [class]. Upptime's own rules are written by
+     * Svelte and come out as a.svelte-ngkazm, which outranks a plain
+     * `nav ul li a` — so the first version of this file set a padding that
+     * never applied and left a 74px bar of pills nearly as tall as it. The
+     * attribute selector matches the same elements and outranks the hash
+     * without depending on it, since the hash changes whenever upstream
+     * touches that component. */
     nav {
-      padding-block: 8px;
+      padding-block: 0;
     }
 
-    nav ul li a {
+    nav ul li a[class] {
       border-radius: 999px;
-      padding: 8px 16px;
+      padding: 7px 14px;
       color: #c7c5d0;
       font-size: 15px;
       font-weight: 500;
+      line-height: 1.2;
       transition: background 200ms cubic-bezier(0.2, 0, 0, 1), color 200ms cubic-bezier(0.2, 0, 0, 1);
     }
 
-    nav ul li a:hover {
-      background: #292930;
+    nav ul li a[class]:hover {
+      background: #1e1e26;
       color: #e4e1e9;
     }
 
-    nav ul li a[aria-current="page"] {
-      background: #292930;
+    /* The page you are on is marked, not highlighted. A filled pill at full
+       strength reads as the thing to press, and the thing to press is one of
+       the other three. */
+    nav ul li a[aria-current="page"][class] {
+      background: #1e1e26;
       color: #e4e1e9;
     }
 
     /* The mark beside the word, at the weight the site sets it. */
-    .logo img {
-      width: 26px;
-      height: 26px;
+    .logo[class] {
+      padding-block: 12px;
+      gap: 8px;
+    }
+
+    .logo img[class] {
+      width: 24px;
+      height: 24px;
     }
 
     .logo div {
@@ -225,13 +242,21 @@ status-website:
       border: none;
     }
 
-    .live-status article {
-      padding: 20px 24px;
+    .live-status article[class] {
+      padding: 16px 20px;
+      /* The response-time graph is a background image on the card itself, and
+         Upptime's --graph-opacity is wired to a child element that does not
+         exist here, so it does nothing. Blending it into the card's own tone
+         is what actually quietens it: the mint fill was taking half of every
+         row and reading as content rather than as texture. */
+      background-blend-mode: soft-light;
+      background-size: auto 62%;
     }
 
     /* State, said with a filled dot rather than the bar down the left that was
        switched off above. It sits against the service's name, which is where
        the eye lands first. */
+    .live-status article h4[class],
     .live-status article h4 {
       display: flex;
       align-items: center;
