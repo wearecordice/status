@@ -2,7 +2,7 @@
   {
     "name": "Web client",
     "url": "https://app.cordice.org/",
-    "icon": "https://app.cordice.org/favicon.ico",
+    "icon": "https://cordice.org/mark.svg",
     "slug": "web-client",
     "status": "up",
     "uptime": "100.00%",
@@ -20,7 +20,7 @@
   {
     "name": "API",
     "url": "https://app.cordice.org/api/",
-    "icon": "https://icons.duckduckgo.com/ip3/app.cordice.org.ico",
+    "icon": "https://cordice.org/mark.svg",
     "slug": "api",
     "status": "up",
     "uptime": "100.00%",
@@ -38,7 +38,7 @@
   {
     "name": "Events",
     "url": "https://app.cordice.org/ws/health",
-    "icon": "https://icons.duckduckgo.com/ip3/app.cordice.org.ico",
+    "icon": "https://cordice.org/mark.svg",
     "slug": "events",
     "status": "up",
     "uptime": "100.00%",
@@ -56,7 +56,7 @@
   {
     "name": "File service",
     "url": "https://app.cordice.org/autumn/",
-    "icon": "https://icons.duckduckgo.com/ip3/app.cordice.org.ico",
+    "icon": "https://cordice.org/mark.svg",
     "slug": "file-service",
     "status": "up",
     "uptime": "100.00%",
@@ -74,7 +74,7 @@
   {
     "name": "Website",
     "url": "https://cordice.org/",
-    "icon": "https://icons.duckduckgo.com/ip3/cordice.org.ico",
+    "icon": "https://cordice.org/mark.svg",
     "slug": "website",
     "status": "up",
     "uptime": "100.00%",
@@ -92,7 +92,7 @@
   {
     "name": "Developer documentation",
     "url": "https://developers.cordice.org/",
-    "icon": "https://icons.duckduckgo.com/ip3/developers.cordice.org.ico",
+    "icon": "https://cordice.org/mark.svg",
     "slug": "developer-documentation",
     "status": "up",
     "uptime": "100.00%",
