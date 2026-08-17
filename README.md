@@ -30,12 +30,12 @@ whose call just dropped rather than for whoever will fix it. Add one severity
 label — `major outage`, `partial outage`, `degraded` or `maintenance` — and then
 post each new fact as a comment, each beginning with its state:
 
-| State | Means |
-| --- | --- |
-| **Investigating** | We know, and we do not yet know why |
-| **Identified** | We know why, and we are working on it |
-| **Monitoring** | The fix is out and we are watching it hold |
-| **Resolved** | It is over |
+| State             | Means                                      |
+| ----------------- | ------------------------------------------ |
+| **Investigating** | We know, and we do not yet know why        |
+| **Identified**    | We know why, and we are working on it      |
+| **Monitoring**    | The fix is out and we are watching it hold |
+| **Resolved**      | It is over                                 |
 
 Close the issue when you post Resolved. Upptime closes the ones it opened
 itself; a hand-written one is yours to close.
