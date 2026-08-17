@@ -7,44 +7,102 @@ repo: status
 # the checks run on GitHub's machines and the page is served by GitHub Pages, so
 # a total outage of our server still leaves a working page saying so. A status
 # page hosted next to the thing it watches goes quiet exactly when it matters.
+#
+# Two rules for everything below.
+#
+# Every entry carries maxResponseTime. Upptime's default is sixty seconds,
+# which is not a threshold so much as the absence of one: nothing this stack
+# serves takes a minute, so "degraded" could never be reached and the page had
+# only two states where it draws three. These services answer in 100–550ms, so
+# three seconds is slow enough to be real trouble and far enough above normal
+# not to cry wolf.
+#
+# Where a service returns something only it would say, the check asserts on
+# that text rather than on the status code alone. A 200 proves something
+# answered, not that the right thing answered.
+#
+# Each entry also carries an icon of our own. Without one Upptime asks
+# icons.duckduckgo.com for a favicon, which means every reader's browser tells
+# DuckDuckGo they are looking at whether Cordice is down — on a site that
+# self-hosts its fonts precisely so no third party learns who reads it. The
+# page never shows them; they are set to stop the request.
 sites:
-  # Each entry carries an icon of our own. Without one Upptime asks
-  # icons.duckduckgo.com for a favicon, which means every reader's browser
-  # tells DuckDuckGo they are looking at whether Cordice is down — on a site
-  # that self-hosts its fonts precisely so no third party learns who reads it.
-  # The page never shows them; they are set to stop the request.
   - name: Web client
     url: https://app.cordice.org/
     icon: https://cordice.org/mark.svg
+    maxResponseTime: 3000
 
   - name: API
     url: https://app.cordice.org/api/
     icon: https://cordice.org/mark.svg
+    maxResponseTime: 3000
     # The discovery document. It touches configuration, the database and the
     # file service's address, so a 200 here means rather more than a static page.
     expectedStatusCodes:
       - 200
+    __dangerous__body_down_if_text_missing: features
 
   - name: Events
+    url: https://app.cordice.org/ws/health
     icon: https://cordice.org/mark.svg
+    maxResponseTime: 3000
     # Not the socket itself: a WebSocket handshake cannot be made over HTTP/2,
     # which is what this monitor speaks, and the proxy would answer 502 — the
     # same 502 a dead service returns. So the service answers this path itself,
     # with a body no other part of the stack would produce.
-    url: https://app.cordice.org/ws/health
     __dangerous__body_down_if_text_missing: ok
 
-  - name: File service
+  - name: Voice
+    # The room server. Its root answers "OK" while it is running, and Caddy
+    # returns 502 when it is not, so the two states cannot be confused.
+    #
+    # This is the one service the front page advertises by name and the status
+    # page said nothing about — someone whose call had just dropped could read
+    # "all systems operational" and be told a lie by omission.
+    url: https://app.cordice.org/livekit/
     icon: https://cordice.org/mark.svg
+    maxResponseTime: 3000
+
+  - name: File service
     url: https://app.cordice.org/autumn/
+    icon: https://cordice.org/mark.svg
+    maxResponseTime: 3000
+    __dangerous__body_down_if_text_missing: file server
+
+  - name: Link previews
+    # What turns a pasted link into a card. Its absence is the kind of fault
+    # people report as "the app is broken" without being able to say how.
+    url: https://app.cordice.org/january/
+    icon: https://cordice.org/mark.svg
+    maxResponseTime: 3000
+    __dangerous__body_down_if_text_missing: media proxy
+
+  - name: GIF search
+    url: https://app.cordice.org/gifbox/
+    icon: https://cordice.org/mark.svg
+    maxResponseTime: 3000
+    __dangerous__body_down_if_text_missing: Gifbox
+
+  - name: Mail
+    # Our own server, and the reason a password reset or a report of abuse
+    # arrives at all. There is no page to fetch, so this opens the submission
+    # port and no more: an implicit-TLS connection answering is what a sending
+    # or collecting client needs to find.
+    check: tcp-ping
+    url: mail.cordice.org
+    port: 465
+    icon: https://cordice.org/mark.svg
+    maxResponseTime: 3000
 
   - name: Website
-    icon: https://cordice.org/mark.svg
     url: https://cordice.org/
+    icon: https://cordice.org/mark.svg
+    maxResponseTime: 3000
 
   - name: Developer documentation
-    icon: https://cordice.org/mark.svg
     url: https://developers.cordice.org/
+    icon: https://cordice.org/mark.svg
+    maxResponseTime: 3000
 
 status-website:
   cname: status.cordice.org
@@ -305,4 +363,30 @@ status-website:
     .live-status article .data {
       color: #e4e1e9;
       font-variant-numeric: tabular-nums;
+    }
+
+    /* Incidents. Now that they are written by hand as well as opened by the
+       monitor, they are worth reading rather than counting: the title carries
+       the weight and the line under it is the summary, which is the shape the
+       rest of the site sets for a list of things to read. */
+    .incidents li[class],
+    .incidents article[class] {
+      border-radius: 16px;
+      border: none;
+    }
+
+    .incidents h3[class],
+    .incidents h4[class] {
+      font-weight: 650;
+      letter-spacing: -0.02em;
+    }
+
+    /* The tag that carries an incident's severity. Filled, because it is the
+       one thing on the row that has to be read before the words. */
+    .tag[class] {
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0;
     }

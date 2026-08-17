@@ -1,8 +1,10 @@
-blank_issues_enabled: true
+# Bug reports and questions belong with the code, not with the status page.
+# This repository holds only the monitors and the incidents they raise.
+blank_issues_enabled: false
 contact_links:
-  - name: Feature requests and ideas
-    url: https://github.com/orgs/upptime/discussions/new?category=ideas
-    about: Suggest an idea for this project
-  - name: Questions
-    url: https://github.com/orgs/upptime/discussions/new?category=q-a
-    about: Please ask and answer questions here
+  - name: Something wrong with Cordice itself
+    url: https://github.com/wearecordice/Cordice/issues
+    about: Bugs, crashes and anything about the software goes to the main repository.
+  - name: Ask a question
+    url: https://github.com/wearecordice/Cordice/discussions
+    about: Discussions is the place for questions and suggestions.
