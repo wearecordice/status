@@ -381,6 +381,21 @@ status-website:
       letter-spacing: -0.02em;
     }
 
+    /* The banner above the list, when everything is up.
+     *
+     * Upptime writes it as a tick emoji and then the sentence, and the emoji
+     * is a literal in the compiled component rather than part of the i18n
+     * string — no setting reaches it. ::first-letter does: the tick is the
+     * first character of the article, and at zero size it is gone while the
+     * sentence stays where it was, still coming from the configuration rather
+     * than being restated here.
+     *
+     * :not(.link) is what separates this banner from the service cards, which
+     * carry the same "up" class and are links. */
+    article.up:not(.link)::first-letter {
+      font-size: 0;
+    }
+
     /* The tag that carries an incident's severity. Filled, because it is the
        one thing on the row that has to be read before the words. */
     .tag[class] {
