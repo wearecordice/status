@@ -5,18 +5,19 @@
     "icon": "https://cordice.org/mark.svg",
     "slug": "web-client",
     "status": "down",
-    "uptime": "99.93%",
-    "uptimeDay": "97.67%",
-    "uptimeWeek": "99.67%",
-    "uptimeMonth": "99.92%",
-    "uptimeYear": "99.93%",
+    "uptime": "97.93%",
+    "uptimeDay": "26.04%",
+    "uptimeWeek": "89.43%",
+    "uptimeMonth": "97.57%",
+    "uptimeYear": "97.93%",
     "time": 500,
-    "timeDay": 705,
-    "timeWeek": 475,
+    "timeDay": 0,
+    "timeWeek": 493,
     "timeMonth": 492,
     "timeYear": 500,
     "dailyMinutesDown": {
-      "2026-09-15": 33
+      "2026-09-16": 234,
+      "2026-09-15": 831
     }
   },
   {
@@ -25,18 +26,19 @@
     "icon": "https://cordice.org/mark.svg",
     "slug": "api",
     "status": "down",
-    "uptime": "99.94%",
-    "uptimeDay": "98.01%",
-    "uptimeWeek": "99.72%",
-    "uptimeMonth": "99.93%",
-    "uptimeYear": "99.94%",
+    "uptime": "97.93%",
+    "uptimeDay": "26.38%",
+    "uptimeWeek": "89.48%",
+    "uptimeMonth": "97.58%",
+    "uptimeYear": "97.93%",
     "time": 469,
-    "timeDay": 613,
-    "timeWeek": 446,
+    "timeDay": 0,
+    "timeWeek": 459,
     "timeMonth": 467,
     "timeYear": 469,
     "dailyMinutesDown": {
-      "2026-09-15": 29
+      "2026-09-16": 234,
+      "2026-09-15": 826
     }
   },
   {
@@ -45,18 +47,19 @@
     "icon": "https://cordice.org/mark.svg",
     "slug": "events",
     "status": "down",
-    "uptime": "99.95%",
-    "uptimeDay": "98.35%",
-    "uptimeWeek": "99.76%",
-    "uptimeMonth": "99.95%",
-    "uptimeYear": "99.95%",
+    "uptime": "97.94%",
+    "uptimeDay": "26.72%",
+    "uptimeWeek": "89.53%",
+    "uptimeMonth": "97.59%",
+    "uptimeYear": "97.94%",
     "time": 456,
-    "timeDay": 465,
-    "timeWeek": 432,
-    "timeMonth": 452,
+    "timeDay": 0,
+    "timeWeek": 430,
+    "timeMonth": 457,
     "timeYear": 456,
     "dailyMinutesDown": {
-      "2026-09-15": 24
+      "2026-09-16": 234,
+      "2026-09-15": 821
     }
   },
   {
@@ -65,18 +68,19 @@
     "icon": "https://cordice.org/mark.svg",
     "slug": "voice",
     "status": "down",
-    "uptime": "99.95%",
-    "uptimeDay": "98.69%",
-    "uptimeWeek": "99.81%",
-    "uptimeMonth": "99.95%",
-    "uptimeYear": "99.95%",
+    "uptime": "97.52%",
+    "uptimeDay": "27.06%",
+    "uptimeWeek": "89.58%",
+    "uptimeMonth": "97.52%",
+    "uptimeYear": "97.52%",
     "time": 433,
-    "timeDay": 459,
-    "timeWeek": 380,
+    "timeDay": 0,
+    "timeWeek": 366,
     "timeMonth": 433,
     "timeYear": 433,
     "dailyMinutesDown": {
-      "2026-09-15": 19
+      "2026-09-16": 234,
+      "2026-09-15": 816
     }
   },
   {
@@ -85,18 +89,19 @@
     "icon": "https://cordice.org/mark.svg",
     "slug": "file-service",
     "status": "down",
-    "uptime": "99.97%",
-    "uptimeDay": "99.03%",
-    "uptimeWeek": "99.86%",
-    "uptimeMonth": "99.97%",
-    "uptimeYear": "99.97%",
+    "uptime": "97.96%",
+    "uptimeDay": "27.39%",
+    "uptimeWeek": "89.63%",
+    "uptimeMonth": "97.61%",
+    "uptimeYear": "97.96%",
     "time": 452,
-    "timeDay": 465,
-    "timeWeek": 383,
-    "timeMonth": 449,
+    "timeDay": 0,
+    "timeWeek": 372,
+    "timeMonth": 450,
     "timeYear": 452,
     "dailyMinutesDown": {
-      "2026-09-15": 14
+      "2026-09-16": 234,
+      "2026-09-15": 811
     }
   },
   {
@@ -105,18 +110,19 @@
     "icon": "https://cordice.org/mark.svg",
     "slug": "link-previews",
     "status": "down",
-    "uptime": "99.98%",
-    "uptimeDay": "99.36%",
-    "uptimeWeek": "99.91%",
-    "uptimeMonth": "99.98%",
-    "uptimeYear": "99.98%",
+    "uptime": "97.54%",
+    "uptimeDay": "27.73%",
+    "uptimeWeek": "89.68%",
+    "uptimeMonth": "97.54%",
+    "uptimeYear": "97.54%",
     "time": 437,
-    "timeDay": 462,
-    "timeWeek": 366,
+    "timeDay": 0,
+    "timeWeek": 347,
     "timeMonth": 437,
     "timeYear": 437,
     "dailyMinutesDown": {
-      "2026-09-15": 9
+      "2026-09-16": 234,
+      "2026-09-15": 806
     }
   },
   {
@@ -125,18 +131,19 @@
     "icon": "https://cordice.org/mark.svg",
     "slug": "gif-search",
     "status": "down",
-    "uptime": "99.99%",
-    "uptimeDay": "99.70%",
-    "uptimeWeek": "99.96%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "99.99%",
+    "uptime": "97.55%",
+    "uptimeDay": "28.07%",
+    "uptimeWeek": "89.72%",
+    "uptimeMonth": "97.55%",
+    "uptimeYear": "97.55%",
     "time": 428,
-    "timeDay": 603,
-    "timeWeek": 382,
+    "timeDay": 0,
+    "timeWeek": 385,
     "timeMonth": 428,
     "timeYear": 428,
     "dailyMinutesDown": {
-      "2026-09-15": 4
+      "2026-09-16": 234,
+      "2026-09-15": 802
     }
   },
   {
@@ -145,18 +152,19 @@
     "icon": "https://cordice.org/mark.svg",
     "slug": "mail",
     "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "uptime": "97.56%",
+    "uptimeDay": "28.36%",
+    "uptimeWeek": "89.77%",
+    "uptimeMonth": "97.56%",
+    "uptimeYear": "97.56%",
     "time": 122,
-    "timeDay": 149,
+    "timeDay": 0,
     "timeWeek": 110,
     "timeMonth": 122,
     "timeYear": 122,
     "dailyMinutesDown": {
-      "2026-09-15": 0
+      "2026-09-16": 234,
+      "2026-09-15": 797
     }
   },
   {
@@ -170,11 +178,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 192,
-    "timeDay": 113,
-    "timeWeek": 171,
-    "timeMonth": 199,
-    "timeYear": 192,
+    "time": 195,
+    "timeDay": 300,
+    "timeWeek": 189,
+    "timeMonth": 207,
+    "timeYear": 195,
     "dailyMinutesDown": {}
   },
   {
@@ -188,11 +196,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 214,
-    "timeDay": 263,
-    "timeWeek": 185,
-    "timeMonth": 215,
-    "timeYear": 214,
+    "time": 218,
+    "timeDay": 329,
+    "timeWeek": 212,
+    "timeMonth": 223,
+    "timeYear": 218,
     "dailyMinutesDown": {}
   }
 ]
