@@ -1,7 +1,7 @@
 url: https://app.cordice.org/ws/health
-status: down
+status: up
 code: 200
-responseTime: 170
-lastUpdated: 2026-10-17T01:10:14.042Z
+responseTime: 844
+lastUpdated: 2026-10-17T16:04:43.094Z
 startTime: 2026-08-11T13:16:46.351Z
 generator: Upptime <https://github.com/upptime/upptime>
