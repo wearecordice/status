@@ -3,7 +3,7 @@ repo: status
 
 # Every address a user or a client depends on, checked from outside our infrastructure.
 #
-# The public status page is Phare's, on status.cordice.org (11 November 2026). This repository keeps
+# The public status page is Perch's, on status.cordice.org (github.com/wearecordice/perch; Phare sends the alerts). This repository keeps
 # checking from GitHub's machines and keeps the history — a second, independent record — but its own
 # site is hidden: no cname, GitHub Pages off. To bring it back as the public page: put
 # `cname: status.cordice.org` under status-website, turn Pages on, point the DNS record back.
@@ -93,7 +93,7 @@ sites:
     maxResponseTime: 3000
 
 status-website:
-  # No cname: the public page is Phare's (see the top of this file).
+  # No cname: the public page is Perch's (see the top of this file).
   name: Cordice Status
   theme: dark
 
