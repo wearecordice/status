@@ -3,9 +3,10 @@ repo: status
 
 # Every address a user or a client depends on, checked from outside our infrastructure.
 #
-# The checks run on GitHub's machines and the page is served by GitHub Pages, so a total outage of
-# our server still leaves a working page saying so. A status page hosted next to the thing it
-# watches goes quiet exactly when it matters.
+# The public status page is Phare's, on status.cordice.org (11 November 2026). This repository keeps
+# checking from GitHub's machines and keeps the history — a second, independent record — but its own
+# site is hidden: no cname, GitHub Pages off. To bring it back as the public page: put
+# `cname: status.cordice.org` under status-website, turn Pages on, point the DNS record back.
 #
 # One model of components for every monitor. The server checks each of its dependencies for real
 # (with its own credentials, which never leave it) and answers GET /healthz/<component> with 200
@@ -92,7 +93,7 @@ sites:
     maxResponseTime: 3000
 
 status-website:
-  cname: status.cordice.org
+  # No cname: the public page is Phare's (see the top of this file).
   name: Cordice Status
   theme: dark
 
