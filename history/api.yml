@@ -1,7 +1,7 @@
 url: https://api.cordice.org/readyz
-status: down
-code: 530
-responseTime: 32
-lastUpdated: 2026-11-13T07:52:51.321Z
+status: up
+code: 200
+responseTime: 803
+lastUpdated: 2026-11-13T15:43:40.289Z
 startTime: 2026-08-11T12:28:30.217Z
 generator: Upptime <https://github.com/upptime/upptime>
