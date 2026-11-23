@@ -1,7 +1,7 @@
 url: https://api.cordice.org/healthz/calls
-status: up
-code: 200
-responseTime: 1797
-lastUpdated: 2026-11-22T02:52:54.444Z
+status: down
+code: 530
+responseTime: 84
+lastUpdated: 2026-11-23T03:35:27.105Z
 startTime: 2026-11-11T23:30:09.364Z
 generator: Upptime <https://github.com/upptime/upptime>
